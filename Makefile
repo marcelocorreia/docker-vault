@@ -5,10 +5,13 @@ VERSION=$(shell cat version)
 PIPELINE_NAME=$(REPOSITORY)-release
 CI_TARGET=dev
 
-build:
+update-version:
 	cat Dockerfile | sed  's/ARG version=".*"/ARG version="$(VERSION)"/' > /tmp/Dockerfile.tmp
 	cat /tmp/Dockerfile.tmp > Dockerfile
 	rm /tmp/Dockerfile.tmp
+.PHONY: update-version
+
+build:
 	docker build -t $(NAMESPACE)/$(CONTAINER):latest .
 .PHONY: build
 

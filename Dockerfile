@@ -1,6 +1,6 @@
-FROM alpine:3.5
+FROM alpine:3.6
 MAINTAINER marcelo correia <marcelocorreia@starvisitor.com>
-ARG version="0.7.2"
+ARG version="0.7.3"
 RUN apk update
 RUN apk upgrade
 RUN apk add ca-certificates && update-ca-certificates
