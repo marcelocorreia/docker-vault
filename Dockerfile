@@ -1,6 +1,5 @@
 FROM alpine:3.6
-MAINTAINER marcelo correia <marcelocorreia@starvisitor.com>
-
+MAINTAINER marcelo correia <marcelo@correia.io>
 ARG version="0.9.0"
 RUN apk update
 RUN apk upgrade
